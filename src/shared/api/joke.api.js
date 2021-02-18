@@ -4,6 +4,10 @@ export const onGetJokeAll = () => {
   return axios.get(`https://api.icndb.com/jokes`);
 }
 
+export const onGetCategoriesAll = () => {
+  return axios.get(`https://api.icndb.com/categories`);
+}
+
 export const onGetJokeLimit = (number) => {
   return axios.get(`https://api.icndb.com/jokes/random/${number}`);
 }

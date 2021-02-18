@@ -1,7 +1,7 @@
-import Select from 'react-select'
+import ReactSelect from 'react-select'
 
-const Select = ({ options }) => {
-  return < Select options={options} />
+const Select = ({ options, onChange }) => {
+  return <ReactSelect options={options} onChange={onChange} />
 }
 
 export default Select

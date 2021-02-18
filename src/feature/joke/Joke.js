@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import CardJoke from './cardJoke/CardJoke'
-import { onGetJokeAll, onGetJokeLimit } from '../../shared/api/joke.api'
+import Select from '../../shared/components/Select/Select'
+import { onGetJokeAll, onGetJokeLimit, onGetCategoriesAll } from '../../shared/api/joke.api'
 
 const Container = styled.div`
   width: 500px;
@@ -16,25 +17,25 @@ const Contant = styled.ul`
   padding: 0;
 `
 
-// const options = [
-//   { value: '10', label: 'Chocolate' },
-//   { value: 'strawberry', label: 'Strawberry' },
-//   { value: 'vanilla', label: 'Vanilla' }
-// ]
-
 const Joke = () => {
   const [joke, setJoke] = useState([])
+  const [initJoke, setInitJoke] = useState([])
+  const [categories, setCategories] = useState([])
+
   useEffect(() => {
     (async () => {
       const { data } = await onGetJokeAll()
+      const { data: categoriesData } = await onGetCategoriesAll()
+      setCategories(categoriesData.value.map(i => ({ value: i, label: i })))
       setJoke(data.value)
+      setInitJoke(data.value)
+
     })()
   }, [])
 
   const onChangeLimit = async (number) => {
     if (number) {
       const { data } = await onGetJokeLimit(number);
-      console.log('data limt', data);
       setJoke(data.value);
       return;
     }
@@ -42,9 +43,15 @@ const Joke = () => {
     setJoke(data.value)
   }
 
+  const onFilterCategorie = ({ value }) => {
+    const data = initJoke.filter(i => i.categories.find(item => item === value))
+    setJoke(data)
+  }
+
   return (
     <Container>
       <input type='number' onChange={(e) => onChangeLimit(e.target.value)} />
+      <Select options={categories} onChange={onFilterCategorie} />
       {joke.length && <Contant>{joke.map(i => (<CardJoke key={i.id} id={i.id} joke={i.joke} />))}</Contant>}
     </Container>
   )
