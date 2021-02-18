@@ -26,7 +26,7 @@ const Navbar = () => {
       </Content>
       <Content>
         {route.map(i => (
-          <NavbarItem to={i.to} name={i.name} />
+          <NavbarItem key={i.name} to={i.to} name={i.name} />
         ))}
       </Content>
     </Nav>
