@@ -9,6 +9,7 @@ import Home from './feature/home/Home'
 import Marathon from './feature/marathon/Marathon'
 import Basic from './feature/basic/Basic'
 import Joke from './feature/joke/Joke'
+import EditJoke from './feature/joke/editJoke/EditJoke'
 
 import Navbar from './shared/theme/Navbar/Navbar'
 
@@ -27,6 +28,9 @@ function App() {
           <Route path="/marathon">
             <Marathon />
           </Route>
+          <Route path="/joke/:id">
+            <EditJoke />
+          </Route>
           <Route path="/joke">
             <Joke />
           </Route>
@@ -36,6 +40,7 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>

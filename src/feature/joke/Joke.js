@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import CardJoke from './cardJoke/CardJoke'
-import { onGetJoke, onGetJokeLimit } from '../../shared/api/joke.api'
+import { onGetJokeAll, onGetJokeLimit } from '../../shared/api/joke.api'
 
 const Container = styled.div`
   width: 500px;
@@ -26,7 +26,7 @@ const Joke = () => {
   const [joke, setJoke] = useState([])
   useEffect(() => {
     (async () => {
-      const { data } = await onGetJoke()
+      const { data } = await onGetJokeAll()
       setJoke(data.value)
     })()
   }, [])
@@ -38,14 +38,14 @@ const Joke = () => {
       setJoke(data.value);
       return;
     }
-    const { data } = await onGetJoke()
+    const { data } = await onGetJokeAll()
     setJoke(data.value)
   }
 
   return (
     <Container>
       <input type='number' onChange={(e) => onChangeLimit(e.target.value)} />
-      {joke.length && <Contant>{joke.map(i => (<CardJoke joke={i.joke} />))}</Contant>}
+      {joke.length && <Contant>{joke.map(i => (<CardJoke key={i.id} id={i.id} joke={i.joke} />))}</Contant>}
     </Container>
   )
 }
