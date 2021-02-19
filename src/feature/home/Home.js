@@ -12,7 +12,7 @@ const Home = () => {
           <Text className='text-4xl flex justify-center'>I'm Front- End Developer</Text>
         </div>
         <div>
-          <img className='h-56 w-auto' src={Profile} alt='Profile' />
+          <img className='h-56 w-auto rounded-lg' src={Profile} alt='Profile' />
         </div>
       </div>
 
