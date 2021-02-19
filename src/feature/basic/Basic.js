@@ -60,7 +60,14 @@ const Basic = () => {
   console.log('secondMax', secondMax([2, 3, 4, 5]), secondMax([9, 2, 21, 21]), secondMax([4, 4, 4, 4]), secondMax([4123]))
   // console.log('secondMax error', secondMax([]))
   console.log('fizzBuzz', fizzBuzz(21), fizzBuzz(25), fizzBuzz(45))
-  return <div><ul><li><p>Fibonacci Sequence</p></li></ul></div>
+  return (
+    <ul>
+      <li><p>Fibonacci Sequence</p></li>
+      <li><p>Array shift</p></li>
+      <li><p>Second max</p></li>
+      <li><p>FizzBuzz</p></li>
+    </ul>
+  )
 }
 
 export default Basic
