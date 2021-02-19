@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 
-import Text from '../../../shared/components/Text/Text'
+import Text from '../../../../shared/components/Text/Text'
 
 const CardJoke = ({ joke, id }) => {
   const history = useHistory();

@@ -22,7 +22,7 @@ const EditJoke = () => {
     })()
   }, [])
 
-  const onSubmitChangeName = async (first, last) => {
+  const onSubmitChangeName = async () => {
     const form = nameForm.current
     console.log('form', `firstname ${form['firstname'].value} lastname ${form['lastname'].value}`)
     const { data } = await onChangeNameJoke(id, form['firstname'].value, form['lastname'].value)
@@ -39,12 +39,11 @@ const EditJoke = () => {
               <Input placeholder='first name' name='firstname' />
               <Input placeholder='last name' name='lastname' />
             </form>
-            <Button onClick={onSubmitChangeName}>gett value</Button>
+            <Button onClick={onSubmitChangeName}>Save</Button>
           </div>
 
           <div className='p-6 bg-white rounded-xl shadow-md flex items-center space-x-4 my-1 min-w-20 border-2 border-blue-500 border-opacity-75 md:border-opacity-50 justify-between'>
             <div className='flex'>
-              {/* <Text>{joke.id}</Text> */}
               <Text>{joke.joke}</Text>
             </div>
             <div className='flex'>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton';
 
-import CardJoke from './cardJoke/CardJoke'
+import CardJoke from './container/cardJoke/CardJoke'
 import Select from '../../shared/components/Select/Select'
 import Input from '../../shared/components/Input/Input'
 import { onGetJokeAll, onGetJokeLimit, onGetCategoriesAll } from '../../shared/api/joke.api'
