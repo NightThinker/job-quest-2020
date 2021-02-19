@@ -10,7 +10,7 @@ const Marathon = () => {
     },
     {
       question: 'Library ที่คาดว่าจะใช้สำหรับ Project นี้ พร้อมทั้งระบุด้วยว่าทำไมถึงเลือกใช้',
-      answer: ['react-dropzone ใช้ในการอัพโหลดไฟล์รูป', 'lodash ใช้ในการจัดการข้อมูล', 'react-select ใช้ในการทำcomponent select',
+      answer: ['tailwindcss ใช้ในทำ css', 'react-dropzone ใช้ในการอัพโหลดไฟล์รูป', 'lodash ใช้ในการจัดการข้อมูล', 'react-select ใช้ในการทำcomponent select',
         'ถ้าเน้นความสวยงามก็ใช้ react-timekeeper ในการชั่วโมงและนาทีคาดว่าจะจบในการวิ่งครั้งนี้', 'dayjs ใช้จัดการข้อมูลเกี่ยวกับเวลา',
         'react-hook-form  กับ  yup ใช้จัดการ Validate Form']
     },
