@@ -1,6 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom'
 
+import Input from '../../../shared/components/Input/Input'
+import Text from '../../../shared/components/Text/Text'
+import Button from '../../../shared/components/Button/Button'
+import Tag from '../../../shared/components/Tag/Tag'
 import Main from '../../../shared/theme/Main'
 
 import { onGetJoke, onChangeNameJoke } from '../../../shared/api/joke.api'
@@ -29,16 +33,28 @@ const EditJoke = () => {
     <Main>
       {joke && (
         <>
-          <form ref={nameForm}>
-            <input label={'first name'} name={'firstname'} />
-            <input label={'last name'} name={'lastname'} />
-          </form>
-          <button onClick={onSubmitChangeName}>gett value</button>
+          <div className='flex gap-2 mb-3'>
 
+            <form ref={nameForm} className='flex gap-2' >
+              <Input placeholder='first name' name='firstname' />
+              <Input placeholder='last name' name='lastname' />
+            </form>
+            <Button onClick={onSubmitChangeName}>gett value</Button>
+          </div>
 
-          <div>{joke.id}</div>
-          <div>{joke.joke}</div>
-          <div>{joke.categories.map((i, index) => (<div key={`${i}-${index}`}>{i}</div>))}</div>
+          <div className='p-6 bg-white rounded-xl shadow-md flex items-center space-x-4 my-1 min-w-20 border-2 border-blue-500 border-opacity-75 md:border-opacity-50 justify-between'>
+            <div className='flex'>
+
+              <Text>{joke.id}</Text>
+              <Text>{joke.joke}</Text>
+            </div>
+            <div className='flex'>
+
+              {joke.categories.length > 0 && <Tag item={joke.categories} />}
+            </div>
+
+          </div>
+
         </>
       )}
     </Main>

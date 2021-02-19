@@ -1,4 +1,6 @@
 
+import Main from '../../shared/theme/Main'
+
 const Basic = () => {
 
   const fib = (num) => {
@@ -61,12 +63,14 @@ const Basic = () => {
   // console.log('secondMax error', secondMax([]))
   console.log('fizzBuzz', fizzBuzz(21), fizzBuzz(25), fizzBuzz(45))
   return (
-    <ul>
-      <li><p>Fibonacci Sequence</p></li>
-      <li><p>Array shift</p></li>
-      <li><p>Second max</p></li>
-      <li><p>FizzBuzz</p></li>
-    </ul>
+    <Main>
+      <ul>
+        <li><p>Fibonacci Sequence</p></li>
+        <li><p>Array shift</p></li>
+        <li><p>Second max</p></li>
+        <li><p>FizzBuzz</p></li>
+      </ul>
+    </Main>
   )
 }
 

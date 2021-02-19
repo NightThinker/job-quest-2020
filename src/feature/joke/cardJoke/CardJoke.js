@@ -1,19 +1,20 @@
 import { useHistory } from 'react-router-dom'
-import styled from '@emotion/styled'
 
-import { sky } from '../../../shared/util/constant'
+import Text from '../../../shared/components/Text/Text'
 
-const CardItem = styled.li`
-  list-style-type: none;
-  padding: 30px;
-  margin: 6px;
-  border: 1px solid ${sky};
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-`
 const CardJoke = ({ joke, id }) => {
   const history = useHistory();
-  return <CardItem onClick={() => history.push(`/joke/${id}`)}>{joke}</CardItem>
+  return (
+    <li
+      className='p-6 bg-white rounded-xl shadow-md flex items-center space-x-4 my-1 min-w-20 border-2 border-blue-500 border-opacity-75 md:border-opacity-50 cursor-pointer'
+      onClick={() => history.push(`/joke/${id}`)}>
+      <Text className='w-5/6'>{joke}</Text>
+      <div class="rounded-full flex items-center justify-center bg-blue-50 " style={{ width: '40px', height: '40px' }}>
+        <Text onClick={() => history.push(`/joke/${id}`)}>Edit</Text>
+      </div>
+
+    </li>
+  )
 }
 
 export default CardJoke

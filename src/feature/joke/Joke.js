@@ -1,16 +1,10 @@
 import { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton';
-import styled from '@emotion/styled'
 
 import CardJoke from './cardJoke/CardJoke'
 import Select from '../../shared/components/Select/Select'
+import Input from '../../shared/components/Input/Input'
 import { onGetJokeAll, onGetJokeLimit, onGetCategoriesAll } from '../../shared/api/joke.api'
-
-const Container = styled.div`
-  width: 500px;
-  margin: 0 auto;
-`
-
 
 
 const Joke = () => {
@@ -45,14 +39,14 @@ const Joke = () => {
   }
 
   return (
-    <Container>
-      <div className='flex'>
-        <input type='number' onChange={(e) => onChangeLimit(e.target.value)} />
-        <Select options={categories} onChange={onFilterCategorie} />
+    <div className='max-w-lg m-auto'>
+      <div className='flex justify-between mb-2'>
+        <Input type='number' placeholder='จำนวนที่ต้องโชว์' onChange={(e) => onChangeLimit(e.target.value)} />
+        <Select options={categories} onChange={onFilterCategorie} placeholder='Search Categories...' />
       </div>
       {joke.length === 0 && <Skeleton />}
       {joke && <ul className='flex flex-col'>{joke.map(i => (<CardJoke key={i.id} id={i.id} joke={i.joke} />))}</ul>}
-    </Container>
+    </div>
   )
 }
 
