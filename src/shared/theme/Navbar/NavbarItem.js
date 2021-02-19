@@ -1,21 +1,9 @@
 import { Link } from 'react-router-dom'
-import styled from '@emotion/styled'
-
-const NavItem = styled.li`
-  list-style-type: none;
-  padding: 6px 28px;
-  :hover {
-    border-bottom: 1px solid red;
-  }
-  a {
-    text-decoration: none
-  }
-`
 
 const NavBarItem = ({ to, name }) => {
-  return (<NavItem>
+  return (<li className='py-1 px-5 hover:border-b-2 hover:border-blue-500'>
     <Link to={to}>{name}</Link>
-  </NavItem>)
+  </li>)
 }
 
 export default NavBarItem

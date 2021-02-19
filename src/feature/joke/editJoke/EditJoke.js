@@ -44,8 +44,7 @@ const EditJoke = () => {
 
           <div className='p-6 bg-white rounded-xl shadow-md flex items-center space-x-4 my-1 min-w-20 border-2 border-blue-500 border-opacity-75 md:border-opacity-50 justify-between'>
             <div className='flex'>
-
-              <Text>{joke.id}</Text>
+              {/* <Text>{joke.id}</Text> */}
               <Text>{joke.joke}</Text>
             </div>
             <div className='flex'>
