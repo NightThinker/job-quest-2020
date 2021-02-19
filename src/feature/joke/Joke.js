@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton';
 import styled from '@emotion/styled'
 
 import CardJoke from './cardJoke/CardJoke'
@@ -10,12 +11,7 @@ const Container = styled.div`
   margin: 0 auto;
 `
 
-const Contant = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-`
+
 
 const Joke = () => {
   const [joke, setJoke] = useState([])
@@ -50,9 +46,12 @@ const Joke = () => {
 
   return (
     <Container>
-      <input type='number' onChange={(e) => onChangeLimit(e.target.value)} />
-      <Select options={categories} onChange={onFilterCategorie} />
-      {joke.length && <Contant>{joke.map(i => (<CardJoke key={i.id} id={i.id} joke={i.joke} />))}</Contant>}
+      <div className='flex'>
+        <input type='number' onChange={(e) => onChangeLimit(e.target.value)} />
+        <Select options={categories} onChange={onFilterCategorie} />
+      </div>
+      {joke.length === 0 && <Skeleton />}
+      {joke && <ul className='flex flex-col'>{joke.map(i => (<CardJoke key={i.id} id={i.id} joke={i.joke} />))}</ul>}
     </Container>
   )
 }
