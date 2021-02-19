@@ -25,12 +25,13 @@ const Marathon = () => {
   ]
   return (
     <Main>
-      <ul className='flex flex-col gap-2'>
+      <ul className='flex flex-col gap-14'>
         {question.map(i => (
-          <li className=' border-2 border-gray-100 p-3 rounded-md shadow-md'>
-            <p className='text-xl mb-2 text-gray-900'>{i.question}</p>
+          <li className='flex flex-col gap-2'>
+            <p className='text-xl mb-2 py-8 text-gray-900 border-2 border-blue-200 p-3 rounded-md shadow-md'>{i.question}</p>
+
             {i.answer.map(m => (
-              <p className='text-gray-600' key={m}>{m}</p>
+              <p className='text-gray-600 ml-8 border-2 border-gray-100 p-3 rounded-md shadow-md' key={m}>{m}</p>
             ))}
           </li>
         ))}
