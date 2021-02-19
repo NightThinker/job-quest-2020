@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { routes } from './shared/components/routes/routes'
+import { routes } from './shared/routes/routes'
 import Navbar from './shared/theme/Navbar/Navbar'
 
 import './App.css';
