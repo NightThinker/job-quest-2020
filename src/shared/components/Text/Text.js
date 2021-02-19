@@ -1,6 +1,6 @@
 
-const Text = ({ className, children }) => {
-  return <span className={`flex text-gray-500 ${className}`}>{children}</span>
+const Text = ({ className, children, ...other }) => {
+  return <span className={`flex text-gray-500 ${className}`} {...other}>{children}</span>
 }
 
 export default Text
