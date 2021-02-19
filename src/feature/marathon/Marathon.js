@@ -1,8 +1,11 @@
 
+
+
+
 const Marathon = () => {
   return <div>
     <ul>
-      <li><p>Folder Structure ที่จะใช้ในการจัดวาง ** </p><p>ขอเก็บไว้ใน Folder feature/marathon </p></li>
+      <li><p className='bg-gray-50'>Folder Structure ที่จะใช้ในการจัดวาง ** </p><p>ขอเก็บไว้ใน Folder feature/marathon </p></li>
       <li><p>Library ที่คาดว่าจะใช้สำหรับ Project นี้ พร้อมทั้งระบุด้วยว่าทำไมถึงเลือกใช้</p>
         <p>- react-dropzone ใช้ในการอัพโหลดไฟล์รูป, lodash ใช้ในการจัดการข้อมูล, react-select ใช้ในการทำcomponent select,
         ถ้าเน้นความสวยงามก็ใช้ react-timekeeper ในการชั่วโมงและนาทีคาดว่าจะจบในการวิ่งครั้งนี้,

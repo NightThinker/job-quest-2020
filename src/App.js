@@ -14,6 +14,7 @@ import EditJoke from './feature/joke/editJoke/EditJoke'
 import Navbar from './shared/theme/Navbar/Navbar'
 
 import './App.css';
+import './shared/styles/main.css'
 
 function App() {
   return (
