@@ -29,10 +29,23 @@ const Basic = () => {
     return result
   }
 
+  const secondMax = (arr) => {
+    const max = Math.max(...arr)
+    try {
+      if (max === -Infinity) throw Error
+      const sort = arr.sort((a, b) => b - a).find(i => i < max) || arr[0]
+      return sort
+    } catch (error) {
+      throw error
+    }
+  };
+
 
 
   console.log('fib', fib(12))
   console.log('fizzBuzz', fizzBuzz(45))
+  console.log('secondMax', secondMax([2, 3, 4, 5]), secondMax([9, 2, 21, 21]), secondMax([4, 4, 4, 4]), secondMax([4123]))
+  // console.log('secondMax error', secondMax([]))
   return <div><ul><li><p>Fibonacci Sequence</p></li></ul></div>
 }
 
